@@ -3,7 +3,7 @@ GLOBAL STYLES
 ///////////////////*/
 
 body {
-	background-color: #79BBD0;
+	background-color: #986B5A;
 	margin: 0 auto;
 }
 
@@ -11,4 +11,14 @@ body {
 	background-color: #F5E9CA;
 	margin: 0 auto;
 	width: 850px;
+}
+
+/*
+HEADER STYLES
+///////////////////*/
+
+header {
+	background-color: #C9E8F2;
+	height: 70px;
+	padding: 20px;
 }
