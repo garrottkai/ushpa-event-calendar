@@ -44,6 +44,11 @@
 		Dave is a recreational paraglider pilot. He started flying early in his professional career, before he was married. Having children forced him to quit flying for a few years, but as his kids got older, he's had a bit more free time on the weekends, and he returned to the sky two years ago.<br>
 		Dave's skill level could be classified as intermediate. He has a P-4 rating, but his busy schedule prevents him from engaging with the sport at the level he did 20 years ago. Nevertheless, Dave belongs to a club, members of which he flies with at a number of sites in the area, and he enjoys regularly participating in fly-ins around the Northwest.<br>
 		</p>
+		<br><br>
+		<h4>Use Case 1</h4>
+		<p></p>
+		<h4>Use Case 2</h4>
+		<p></p>
 		</div>
 	</body>
 </html>
