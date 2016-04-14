@@ -46,7 +46,8 @@
 		</p>
 		<br><br>
 		<h4>Use Case 1</h4>
-		<p></p>
+		<p>Having recently received the latest issue of <em>Hang Gliding and Paragliding</em> magazine in the mail, Dave decides to visit the USHPA site to find more information on upcoming fly-ins taking place in the region.<br>
+		He types in ushpa.org to visit the main page and then, using a drop-down menu, navigates to the Events page. Dave is looking for a concise and complete list of events, each item of which is clickable to view a detailed description, including contact information. A date range selector and search function will help, as he is interested in events taking place over the summer in Washington, Idaho, and Oregon.</p>
 		<h4>Use Case 2</h4>
 		<p></p>
 		</div>
