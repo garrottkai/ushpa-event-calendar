@@ -46,10 +46,41 @@
 		</p>
 		<br><br>
 		<h4>Use Case 1</h4>
-		<p>Having recently received the latest issue of <em>Hang Gliding and Paragliding</em> magazine in the mail, Dave decides to visit the USHPA site to find more information on upcoming fly-ins taking place in the region.<br>
-		He types in ushpa.org to visit the main page and then, using a drop-down menu, navigates to the Events page. Dave is looking for a concise and complete list of events, each item of which is clickable to view a detailed description, including contact information. A date range selector and search function will help, as he is interested in events taking place over the summer in Washington, Idaho, and Oregon.</p>
+		<p>Having recently received the latest issue of <em>Hang Gliding and Paragliding</em> magazine in the mail, Dave decides to visit the USHPA site to find more information on upcoming fly-ins taking place in the region over the summer.</p>
+		<ol>
+			<li>Dave types in ushpa.org</li>
+			<li>The browser returns the main page</li>
+			<li>Dave clicks on the "Events" link</li>
+			<li>The browser returns the Event Calendar page</li>
+			<li>Dave selects a date range of June 01 to August 30</li>
+			<li>The browser returns a list of items meeting the criteria</li>
+			<li>Dave clicks on the Search box and enters "Washington"</li>
+			<li>The browser returns a list of items which meet the additional criterion</li>
+			<li>Dave clicks on the first item returned</li>
+			<li>The browser displays a page of detailed information regarding the selected event</li>
+		</ol><br>
 		<h4>Use Case 2</h4>
-		<p></p>
+		<p>Dave's flying club decides to hold a fly-in at a local site. Dave volunteers to help publicise the event by posting a notice on the USHPA website.</p>
+		<ol>
+			<li>Dave types ushpa.org into the address bar of his browser</li>
+			<li>The browser returns the main page</li>
+			<li>Dave clicks on the "Events" link</li>
+			<li>The browser returns the Event Calendar page</li>
+			<li>Dave clicks on the "Submit an Event" link</li>
+			<li>The browser displays a form containing the following fields:
+				<ul>
+					<li>USHPA Number</li>
+					<li>Name (First & Last)</li>
+					<li>Email Address</li>
+					<li>Phone Number</li>
+					<li>Event Name</li>
+					<li>Location of Event</li>
+					<li>More Info</li>
+					<li>Wing Type</li>
+					<li></li>
+				</ul>
+			</li>
+		</ol>
 		</div>
 	</body>
 </html>
