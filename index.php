@@ -8,9 +8,9 @@
 	</head>
 	<body>
 		<h1>Data Design Project</h1>
-		<p>Welcome to my analysis of the data structure of an interactive web page: The United States Hang Gliding and Paragliding Association <a href="https://www.ushpa.org/page/calendar">event calendar</a>.</p>
+		<p>Welcome to my analysis of the data structure of an interactive web page:<br>The United States Hang Gliding and Paragliding Association <a href="https://www.ushpa.org/page/calendar">event calendar</a>.</p>
 		<br>
-		<p>Persona & Use Cases</p>
-		<p>Data Relationships</p>
+		<p><a href="persona.php">Persona & Use Cases</a></p>
+		<p><a href="relationships.php">Data Relationships</a></p>
 	</body>
 </html>
