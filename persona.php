@@ -13,7 +13,7 @@
 			<h1>Persona</h1>
 		</header>
 		<p>
-			The intended purpose of this site is twofold: to provide a public listing of upcoming events in the U.S. paragliding community, and to offer the opportunity for USHPA members to submit new event listings for display.<br>
+			The intended purpose of this site is twofold: to provide a public listing of upcoming events in the U.S. paragliding community, and to offer the opportunity for USHPA members to submit new event listings for display.<br><br>
 		Potential users of this resource can be generalized as having many of the following characteristics:<br></p>
 			<ul>
 				<li>Age: Ranging from 20 to 70; majority 30 - 60; average 40</li>
