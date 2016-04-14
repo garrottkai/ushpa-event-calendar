@@ -4,11 +4,11 @@ GLOBAL STYLES
 
 body {
 	background-color: #79BBD0;
-	margin: 0;
+	margin: 0 auto;
 }
 
 .container {
 	background-color: #F5E9CA;
-	margin: 0;
+	margin: 0 auto;
 	width: 850px;
 }
