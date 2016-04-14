@@ -8,11 +8,13 @@
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
+		<div class="container">
 		<header>
 			<h1>Persona</h1>
 		</header>
 		<p></p>
 		<h2></h2>
 		<p></p>
+		</div>
 	</body>
 </html>
