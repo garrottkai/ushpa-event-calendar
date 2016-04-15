@@ -77,9 +77,18 @@
 					<li>Location of Event</li>
 					<li>More Info</li>
 					<li>Wing Type</li>
-					<li></li>
+					<li>Event Type</li>
+					<li>Event Description</li>
+					<li>Recurring Event? Y/N</li>
+					<li>Start Date</li>
+					<li>End Date</li>
+					<li>Notes to USHPA</li>
 				</ul>
 			</li>
+			<li>Dave fills out the form and clicks "Submit"</li>
+			<li>The browser submits the form to the server and returns a confirmation page</li>
+			<li>An administrator uses the event information to create an event posting</li>
+			<li>The page displays the event in the list</li>
 		</ol>
 		</div>
 	</body>
