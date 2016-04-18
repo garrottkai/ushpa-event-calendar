@@ -13,7 +13,7 @@
 			<h1>Data Relationships</h1>
 		</header>	
 		<h3>Entity relationship diagram</h3>
-		<img src="/images/data-design.svg"	width="600px" alt="entity relationship diagram" />
+		<object data="/images/data-design.svg" type="image/svg+xml"></object>
 		</div>
 	</body>
 </html>
