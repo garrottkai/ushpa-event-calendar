@@ -14,6 +14,6 @@
 		</header>	
 		<h3>Entity relationship diagram</h3>
 		</div>
-		<object data="/images/data-design.svg" type="image/svg+xml">This is an svg</object>
+		<img src="/images/data-design.svg" />
 	</body>
 </html>
