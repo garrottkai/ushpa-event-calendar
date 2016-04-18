@@ -5,7 +5,6 @@
 		<meta name="author" content="Kai Garrott" />
 		<meta name="description" content="data relationships page" />
 		<title>Data Relationships</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
 		<div class="container">
