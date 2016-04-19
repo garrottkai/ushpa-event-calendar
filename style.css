@@ -25,3 +25,11 @@ header {
 	height: 70px;
 	padding: 20px;
 }
+
+/*
+IMAGE STYLES
+//////////////////*/
+
+.imageSpace {
+	text-align: center; padding: 30px;
+}

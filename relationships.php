@@ -14,7 +14,8 @@
 		</header>	
 		<h3>Entity relationship diagram</h3>
 		</div>
+		<div class="imageSpace">
 		<img src="images/data-design-bitmap.png" />
-		
+		</div>
 	</body>
 </html>
