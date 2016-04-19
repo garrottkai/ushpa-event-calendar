@@ -1,10 +1,11 @@
 <?php
+namespace Edu\Cnm\Kgarrott\Ushpa-Event-Calendar
 /**
  * These are variables and methods for the user entity
  *
  */
 
-class User {
+class User implements \JsonSerializable {
 	/**
 	 * id for the user creating a posting; this is the primary key
 	 * @var int $userUshpaNumber
@@ -43,7 +44,22 @@ class User {
 	 * @throws \TypeError if $newUserUshpaNumber is not an integer
 	 */
 	public function setUserUshpaNumber(int $newUserUshpaNumber) {
+		// verify the user USHPA number is positive
+		if($newUserUshpaNumber <= 0) {
+			throw(new \RangeException("User USHPA Number not positive"));
+		}
+
+		// convert and store the user USHPA number
 		$this->userUshpaNumber = $newUserUshpaNumber;
+	}
+
+	/**
+	 * accessor method for user full name
+	 *
+	 * @return string value of user full name
+	 */
+	public function getUserFullName() {
+		return $this->userFullName;
 	}
 }
 ?>
