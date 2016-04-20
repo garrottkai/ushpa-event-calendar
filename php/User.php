@@ -60,7 +60,7 @@ class User implements \JsonSerializable {
 	 * @return string value of user full name
 	 */
 	public function getUserFullName() {
-		return $this->userFullName;
+		return ($this->userFullName);
 	}
 
 	/**
@@ -88,7 +88,7 @@ class User implements \JsonSerializable {
 	 * @return string value of user email
 	 */
 	public function getUserEmail() {
-		return $this->userEmail;
+		return ($this->userEmail);
 	}
 
 	/**
@@ -116,7 +116,7 @@ class User implements \JsonSerializable {
 	 * @return int value of user phone
 	 */
 	public function getUserPhone() {
-		return $this->userPhone;
+		return ($this->userPhone);
 	}
 
 	/**
@@ -135,5 +135,224 @@ class User implements \JsonSerializable {
 		// store the user phone
 		$this->userPhone = $newUserPhone;
 	}
+}
+
+/**
+ * ////////////////////////////////////////////////////////////////
+ *
+ * These are variables and methods for the event entity
+ */
+
+class Event implements \JsonSerializable {
+	/**
+	 * This is the automatically generated id for the event posting; it is the primary key
+	 * @var int $eventId
+	 */
+	private $eventId;
+	/**
+	 * Name of the event
+	 * @var string eventName
+	 */
+	private $eventName;
+	/**
+	 * Type of event, e.g. fly-in, competition, clinic
+	 * @var string $eventType
+	 */
+	private $eventType;
+	/**
+	 * Type of wing participating in event: Hang glider or paraglider
+	 * @var string $eventWingType
+	 */
+	private $eventWingType;
+	/**
+	 * Map location of event
+	 * @var string $eventLocation
+	 */
+	private $eventLocation;
+	/**
+	 * Does this event recur?
+	 * @var bool $eventRecurs
+	 */
+	private $eventRecurs;
+	/**
+	 * Date on which event begins; in a PHP DateTime object
+	 * @var \DateTime $eventStartDate
+	 */
+	private $eventStartDate;
+	/**
+	 * Date on which event ends; in a PHP DateTime object
+	 * @var \DateTime $eventEndDate
+	 */
+	private $eventEndDate;
+	/**
+	 * Description of the event
+	 * @var string $eventDescription
+	 */
+	private $eventDescription;
+	/**
+	 * Additional information about the event
+	 * @var string $eventAdditionalInfo
+	 */
+	private $eventAdditionalInfo;
+
+	/**
+	 * accessor method for event id
+	 *
+	 * @return int|null value of event id
+	 */
+	public function getEventId() {
+		return ($this->eventId);
+	}
+
+	/**
+	 * mutator method for event id
+	 *
+	 * @param int|null $newEventId new value of event id
+	 * @throws \RangeException if $newEventId is not positive
+	 * @throws \TypeError if $newEventId is not an integer
+	 */
+	public function setEventId(int $newEventId) {
+		// if the event id is null, this is a new event to which mySQL has not yet assigned an id
+		if($newEventId === null) {
+			$this->eventId = null;
+			return;
+		}
+
+		// verify that the event id is positive
+		if($newEventId <= 0) {
+			throw(new \RangeException("Event ID is not positive"));
+		}
+
+		// convert and store the event id
+		$this->eventId = $newEventId;
+	}
+
+	/**
+	 * accessor method for event name
+	 *
+	 * @return string value of event name
+	 */
+	public function getEventName() {
+		return ($this->eventName);
+	}
+
+	/**
+	 * mutator method for event name
+	 *
+	 * @param string $newEventName new event name
+	 * @throws \InvalidArgumentException if $newEventName is not a string or is insecure
+	 * @throws \TypeError if $newEventName is not a string
+	 */
+	public function setEventName(string $newEventName) {
+		// verify the event name is secure
+		$newEventName = trim($newEventName);
+		$newEventName = filter_var($newEventName, FILTER_SANITIZE_STRING);
+		if (empty($newEventName) === true) {
+			throw(new \InvalidArgumentException("Event name is empty or insecure"));
+		}
+
+		// store the event name
+		$this->eventName = $newEventName;
+	}
+
+	/**
+	 * accessor function for event type
+	 *
+	 * @return string value of event type
+	 */
+	public function getEventType() {
+		return ($this->eventType);
+	}
+
+	/**
+	 * mutator function for event type
+	 *
+	 * @param string $newEventType new value of event type
+	 * @throws \InvalidArgumentException if $newEventType is not a string or is insecure
+	 * @throws \TypeError if $newEventType is not a string
+	 */
+	public function setEventType($newEventType) {
+		// verify that the event type content is secure
+		$newEventType = trim($newEventType);
+		$newEventType = filter_var($newEventType, FILTER_SANITIZE_STRING);
+		if(empty($newEventType) === true) {
+			throw(new \InvalidArgumentException("Event type is empty or insecure"));
+		}
+
+		// store the event type
+		$this->eventType = $newEventType;
+	}
+
+	/**
+	 * accessor method for event wing type
+	 *
+	 * @return string value of event wing type
+	 */
+	public function getEventWingType() {
+		return ($this->eventWingType);
+	}
+
+	/**
+	 * mutator method for event wing type
+	 *
+	 * @param string $newEventWingType new value of event wing type
+	 * @throws \InvalidArgumentException if $newEventWingType is not a string or is insecure
+	 * @throws \TypeError if $newEventWingType is not a string
+	 */
+	public function setEventWingType($newEventWingType) {
+		// verify the event wing type content is secure
+		$newEventWingType = trim($newEventWingType);
+		$newEventWingType = filter_var($newEventWingType, FILTER_SANITIZE_STRING);
+		if(empty($newEventWingType) === true) {
+			throw(new \InvalidArgumentException("Event wing type is empty or insecure"));
+		}
+
+		// store the event wing type
+		$this->eventWingType = $newEventWingType;
+	}
+
+	/**
+	 * accessor method for event location
+	 *
+	 * @return string value of event location
+	 */
+	public function getEventLocation() {
+		return ($this->eventLocation);
+	}
+
+	/**
+	 * mutator method for event location
+	 *
+	 * @param string $newEventLocation new value of event location
+	 * @throws \InvalidArgumentException if $newEventLocation is not a string or is insecure
+	 * @throws \TypeError if $newEventLocation is not a string
+	 */
+	public function setEventLocation($newEventLocation) {
+		// verify that the event location content is secure
+		$newEventLocation = trim($newEventLocation);
+		$newEventLocation = filter_var($newEventLocation, FILTER_SANITIZE_STRING);
+		if(empty($newEventLocation) === true) {
+			throw(new \InvalidArgumentException("Event location content is empty or insecure"));
+		}
+
+		// store the event location
+		$this->eventLocation = $newEventLocation;
+	}
+
+	/**
+	 * accessor method for recurring event true/false
+	 *
+	 * @return boolean value of recurring event
+	 */
+	public function isEventRecurs() {
+		return ($this->eventRecurs);
+	}
+
+	/**
+	 * mutator method for recurring event true/false
+	 *
+	 * @param 
+	 */
+
 }
 ?>
