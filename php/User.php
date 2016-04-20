@@ -271,7 +271,7 @@ class Event implements \JsonSerializable {
 	 * @throws \InvalidArgumentException if $newEventType is not a string or is insecure
 	 * @throws \TypeError if $newEventType is not a string
 	 */
-	public function setEventType($newEventType) {
+	public function setEventType(string $newEventType) {
 		// verify that the event type content is secure
 		$newEventType = trim($newEventType);
 		$newEventType = filter_var($newEventType, FILTER_SANITIZE_STRING);
@@ -299,7 +299,7 @@ class Event implements \JsonSerializable {
 	 * @throws \InvalidArgumentException if $newEventWingType is not a string or is insecure
 	 * @throws \TypeError if $newEventWingType is not a string
 	 */
-	public function setEventWingType($newEventWingType) {
+	public function setEventWingType(string $newEventWingType) {
 		// verify the event wing type content is secure
 		$newEventWingType = trim($newEventWingType);
 		$newEventWingType = filter_var($newEventWingType, FILTER_SANITIZE_STRING);
@@ -327,7 +327,7 @@ class Event implements \JsonSerializable {
 	 * @throws \InvalidArgumentException if $newEventLocation is not a string or is insecure
 	 * @throws \TypeError if $newEventLocation is not a string
 	 */
-	public function setEventLocation($newEventLocation) {
+	public function setEventLocation(string $newEventLocation) {
 		// verify that the event location content is secure
 		$newEventLocation = trim($newEventLocation);
 		$newEventLocation = filter_var($newEventLocation, FILTER_SANITIZE_STRING);
@@ -351,8 +351,34 @@ class Event implements \JsonSerializable {
 	/**
 	 * mutator method for recurring event true/false
 	 *
-	 * @param 
+	 * @param bool $newEventRecurs
+	 * @throws \TypeError if $newEventRecurs is not boolean
 	 */
+	public function setEventRecurs(bool $newEventRecurs) {
+
+		// save recurring event boolean value
+		$this->eventRecurs = $newEventRecurs;
+	}
+
+	/**
+	 * accessor method for event start date
+	 *
+	 * @return \DateTime value of event start date
+	 */
+	public function getEventStartDate() {
+		return ($this->eventStartDate);
+	}
+
+	/**
+	 * mutator method for event start date
+	 *
+	 * @param \DateTime|string $newEventStartDate event start date as DateTime object or string
+	 * @throws \InvalidArgumentException if $newEventStartDate is not a valid object or string
+	 * @throws \RangeException if $newEventStartDate is a date that does not exist
+	 */
+	public function setEventStartDate($eventStartDate) {
+		$this->eventStartDate = $eventStartDate;
+	}
 
 }
 ?>
