@@ -406,7 +406,7 @@ class Event implements \JsonSerializable {
 	/**
 	 * accessor method for event start date
 	 *
-	 * @return \DateTime value of event start date
+	 * @return \DateTime or string value of event start date
 	 */
 	public function getEventStartDate() {
 		return ($this->eventStartDate);
@@ -420,10 +420,86 @@ class Event implements \JsonSerializable {
 	 * @throws \RangeException if $newEventStartDate is a date that does not exist
 	 */
 	public function setEventStartDate($newEventStartDate) {
+		// store the event start date
 		$this->eventStartDate = $newEventStartDate;
 	}
 
+	/**
+	 * accessor method for event end date
+	 *
+	 * @return \DateTime or string value of event end date
+	 */
+	public function getEventEndDate() {
+		return ($this->eventEndDate);
+	}
 
+	/**
+	 * mutator method for event end date
+	 *
+	 * @param \DateTime|string $newEventEndDate event end date as DateTime object or string
+	 * @throws \InvalidArgumentException if $newEventEndDate is not a valid object or string
+	 * @throws \RangeException if $newEventEndDate is a date that does not exist
+	 */
+	public function setEventEndDate($newEventEndDate) {
+		// store the event end date
+		$this->eventEndDate = $newEventEndDate;
+	}
+
+	/**
+	 * accessor method for event description
+	 *
+	 * @return string value of event description
+	 */
+	public function getEventDescription() {
+		return ($this->eventDescription);
+	}
+
+	/**
+	 * mutator method for event description
+	 *
+	 * @param string $newEventDescription event description as a string
+	 * @throws \InvalidArgumentException if $newEventDescription is not a string or is invalid
+	 * @throws \TypeError if $newEventDescription is not a string
+	 */
+	public function setEventDescription($newEventDescription) {
+		// verify that the event description is secure
+		$newEventDescription = trim($newEventDescription);
+		$newEventDescription = filter_var($newEventDescription, FILTER_SANITIZE_STRING);
+		if(empty($newEventDescription) === true) {
+			throw(new \InvalidArgumentException("Event description content is empty or insecure"));
+		}
+
+		// store the event description
+		$this->eventDescription = $newEventDescription;
+	}
+
+	/**
+	 * accessor method for event additional info
+	 *
+	 * @return string value of event additional info
+	 */
+	public function getEventAdditionalInfo() {
+		return ($this->eventAdditionalInfo);
+	}
+
+	/**
+	 * mutator method for event additional info
+	 *
+	 * @param string $newEventAdditionalInfo event additional info as a string
+	 * @throws \InvalidArgumentException if $newEventAdditionalInfo is not a string or is invalid
+	 * @throws \TypeError if $newEventDescription is not a string
+	 */
+	public function setEventAdditionalInfo($newEventAdditionalInfo) {
+		// verify that the event additional info is secure
+		$newEventAdditionalInfo = trim($newEventAdditionalInfo);
+		$newEventAdditionalInfo = filter_var($newEventAdditionalInfo, FILTER_SANITIZE_STRING);
+		if(empty($newEventAdditionalInfo) === true) {
+			throw(new \InvalidArgumentException("Event additional info is empty or insecure"));
+		}
+
+		// store the event additional info
+		$this->eventAdditionalInfo = $newEventAdditionalInfo;
+	}
 	/**
 	 * formats the state variables for json serialization
 	 *
