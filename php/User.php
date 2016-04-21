@@ -168,6 +168,16 @@ class User implements \JsonSerializable {
 		// store the user phone
 		$this->userPhone = $newUserPhone;
 	}
+
+	/**
+	 * formats the state variables for json serialization
+	 *
+	 * @return array resulting state variables to serialize
+	 */
+	public function jsonSerialize() {
+		$fields = get_object_vars($this);
+		return($fields);
+	}
 }
 
 /**
@@ -414,9 +424,16 @@ class Event implements \JsonSerializable {
 	}
 
 
+	/**
+	 * formats the state variables for json serialization
+	 *
+	 * @return array resulting state variables to serialize
+	 */
 	public function jsonSerialize() {
 		$fields = get_object_vars($this);
-		$fields[""] = intval($this->t)
+		$fields["eventStartDate"] = intval($this->eventStartDate->format("U")) * 1000;
+		$fields["eventEndDate"] = intval($this->eventEndDate->format("U")) * 1000;
+		return($fields);
 	}
 
 }
