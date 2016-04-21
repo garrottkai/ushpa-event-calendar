@@ -1,7 +1,9 @@
 <?php
 namespace Edu\Cnm\Kgarrott\Ushpa-event-calendar;
 /**
- * These are variables and methods for the user entity
+ * Variables and methods for the user and event entities
+ *
+ * These are the methods and state variables for the USHPA Event Calendar web page and its User and Event entities
  *
  * @author Kai Garrott <garrottkai@gmail.com>
  */
@@ -511,6 +513,5 @@ class Event implements \JsonSerializable {
 		$fields["eventEndDate"] = intval($this->eventEndDate->format("U")) * 1000;
 		return($fields);
 	}
-
 }
 ?>
