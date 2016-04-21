@@ -29,6 +29,39 @@ class User implements \JsonSerializable {
 	private $userPhone;
 
 	/**
+	 * constructor for this user
+	 *
+	 * @param int $newUserUshpaNumber id of the user
+	 * @param string $newUserFullName full name of the user
+	 * @param string $newUserEmail email of the user
+	 * @param int $newUserPhone phone number of the user
+	 * @throws \InvalidArgumentException if data types are not valid
+	 * @throws \RangeException if integers are not positive
+	 * @throws \TypeError if data types violate type hints
+	 * @throws \Exception if other exception occurs
+	 */
+	public function __construct(int $newUserUshpaNumber, string $newUserFullName, string $newUserEmail, int $newUserPhone) {
+		try {
+			$this->setUserUshpaNumber($newUserUshpaNumber);
+			$this->setUserFullName($newUserFullName);
+			$this->setUserEmail($newUserEmail);
+			$this->setUserPhone($newUserPhone);
+		} catch(\InvalidArgumentException $invalidArgument) {
+			// rethrow the exception to the caller
+			throw(new \InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
+		} catch(\RangeException $range) {
+			// rethrow the exception to the caller
+			throw(new \RangeException($range->getMessage(), 0, $range));
+		} catch(\TypeError $typeError) {
+			// rethrow the exception to the caller
+			throw(new \TypeError($typeError->getMessage(), 0, $typeError));
+		} catch(\Exception $exception) {
+			// rethrow the exception to the caller
+			throw(new \Exception($exception->getMessage(), 0, $exception));
+		}
+	}
+
+	/**
 	 * accessor method for user USHPA number
 	 *
 	 * @return int value of user USHPA number
@@ -376,8 +409,14 @@ class Event implements \JsonSerializable {
 	 * @throws \InvalidArgumentException if $newEventStartDate is not a valid object or string
 	 * @throws \RangeException if $newEventStartDate is a date that does not exist
 	 */
-	public function setEventStartDate($eventStartDate) {
-		$this->eventStartDate = $eventStartDate;
+	public function setEventStartDate($newEventStartDate) {
+		$this->eventStartDate = $newEventStartDate;
+	}
+
+
+	public function jsonSerialize() {
+		$fields = get_object_vars($this);
+		$fields[""] = intval($this->t)
 	}
 
 }
