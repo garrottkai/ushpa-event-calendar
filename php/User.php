@@ -513,5 +513,47 @@ class Event implements \JsonSerializable {
 		$fields["eventEndDate"] = intval($this->eventEndDate->format("U")) * 1000;
 		return($fields);
 	}
+
+	/**
+	 * get user by USHPA id
+	 *
+	 * @param PDO $pdo connection object
+	 * @param int $userUshpaId USHPA id to search for
+	 * @return string user full name
+	 * @throws \PDOException when mySQL error occurs
+	 * @throws \TypeError when vars not correct data type
+	 */
+	public static function getUserByUserUshpaNumber(\PDO $pdo, int $userUshpaNumber) {
+		// sanitize ushpa id before search
+		if($userUshpaNumber <= 0) {
+			throw(new \PDOException("User USHPA Number is not positive"));
+		}
+
+		// create query template
+		$query = "SELECT userUshpaNumber, userFullName, userEmail, userPhone FROM USER WHERE userUshpaNumber = :userUshpaNumber";
+		$statement = $pdo->prepare($query);
+
+		// bind user USHPA number to place holder in template
+		$parameters = array("userUshpaNumber" => $userUshpaNumber);
+		$statement->execute($parameters);
+
+		// grab user from mySQL
+		try {
+			$user = null;
+			$statement->setFetchMode(\PDO::FETCH_ASSOC);
+			$row = $statement->fetch();
+			if($row !== false) {
+				$user = new User($row["userUshpaNumber"], $row["userFullName"], $row["userEmail"], $row["userPhone"]);
+			}
+		} catch(\Exception $exception) {
+			// if the row couldn't be converted, rethrow it
+			throw(new \PDOException($exception->getMessage(), 0, $exception));
+		}
+		return($user);
+	}
+
+	/**
+	 * gets
+	 */
 }
 ?>
